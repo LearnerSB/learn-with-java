@@ -44,7 +44,7 @@ public class SinglyLinkedList {
         size++;
     }
 
-    public void deleteSinglyLL(int position) {
+    public void deleteSinglyLLNode(int position) {
         if (head == null) {
             System.out.println("Singly Linked List doesn't exist");
         } else if (position == 0) {
@@ -120,5 +120,18 @@ public class SinglyLinkedList {
         return false;
     }
 
+    // to get the head for stack/ queue with Linked List implementation
+    public LinkedListNode getHead() {
+        return head;
+    }
 
+    // to set the head for stack/ queue with Linked List implementation
+    public void setHead(LinkedListNode head) {
+        this.head = head;
+    }
+
+    // to get the size for stack/ queue with Linked List implementation
+    public int getSize() {
+        return size;
+    }
 }

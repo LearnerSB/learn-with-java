@@ -48,7 +48,7 @@ public class CircularLinkedList {
         size++;
     }
 
-    public void deleteCircularLL(int position) {
+    public void deleteCircularLLNode(int position) {
         if (head == null) {
             System.out.println("Circular Linked List doesn't exist");
         } else if (position == 0) {

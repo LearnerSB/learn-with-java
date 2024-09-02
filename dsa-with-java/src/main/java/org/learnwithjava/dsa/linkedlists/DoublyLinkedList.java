@@ -49,7 +49,7 @@ public class DoublyLinkedList {
         size++;
     }
 
-    public void deleteDoublyLL(int position) {
+    public void deleteDoublyLLNode(int position) {
         if (head == null) {
             System.out.println("Doubly Linked List doesn't exist");
         } else if (position == 0) {
@@ -85,7 +85,7 @@ public class DoublyLinkedList {
 
     }
 
-    public void deleteDoublyLL() {
+    public void deleteDoublyLLNode() {
         DoublyLLNode currentNode = head;
         for (int i =0; i< size; i++) {
             currentNode.prev = null;

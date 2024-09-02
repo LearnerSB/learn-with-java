@@ -11,7 +11,7 @@ public class DoublyLinkedListMain {
         doublyLinkedList.insertIntoDoublyLL(3, 1);
         doublyLinkedList.insertIntoDoublyLL(4, 7);
         doublyLinkedList.traverseDoublyLL();
-        doublyLinkedList.deleteDoublyLL();
+        doublyLinkedList.deleteDoublyLLNode();
         doublyLinkedList.traverseDoublyLL();
     }
 }
