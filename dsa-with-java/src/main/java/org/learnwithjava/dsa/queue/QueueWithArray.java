@@ -2,24 +2,24 @@ package org.learnwithjava.dsa.queue;
 
 public class QueueWithArray {
     private int arr[];
-    private int topOfQueue;
-    private int beginningOfQueue;
+    private int rear;
+    private int front;
 
     public QueueWithArray(int size) {
         this.arr = new int[size];
-        this.topOfQueue = this.beginningOfQueue = -1;
+        this.rear = this.front = -1;
         System.out.println("The queue created with size: " + size);
     }
 
     public boolean isFull() {
-        if (topOfQueue == arr.length - 1) {
+        if (rear == arr.length - 1) {
             return true;
         }
         return false;
     }
 
     public boolean isEmpty() {
-        if ((beginningOfQueue == -1) || beginningOfQueue == arr.length) {
+        if ((front == -1) || front == arr.length) {
             return true;
         }
         return false;
@@ -32,10 +32,10 @@ public class QueueWithArray {
         }
 
         if (isEmpty()) {
-            arr[++topOfQueue] = data;
-            beginningOfQueue = 0;
+            arr[++rear] = data;
+            front = 0;
         } else {
-            arr[++topOfQueue] = data;
+            arr[++rear] = data;
         }
     }
 
@@ -44,10 +44,10 @@ public class QueueWithArray {
             System.out.println("The queue is Empty");
             return -1;
         }
-        int result = arr[beginningOfQueue];
-        beginningOfQueue++;
-        if (beginningOfQueue > topOfQueue) {
-            beginningOfQueue = topOfQueue = -1;
+        int result = arr[front];
+        front++;
+        if (front > rear) {
+            front = rear = -1;
         }
         return result;
     }
@@ -57,12 +57,19 @@ public class QueueWithArray {
             System.out.println("The queue is Empty");
             return -1;
         }
-        return arr[beginningOfQueue];
+        return arr[front];
     }
 
     public void deleteQueue() {
         arr = null;
-        beginningOfQueue = topOfQueue = -1;
+        front = rear = -1;
         System.out.println("The queue is successfully deleted");
     }
+
+    // at any point of time the number of elements in the queue is (rear - front + 1)
+    // except initially empty queue.
+
+    // overflow condition: rear == size of array - 1
+
+    // underflow condition: front = rear = -1 && front == (rear + 1)
 }
